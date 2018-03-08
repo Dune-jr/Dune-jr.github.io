@@ -239,13 +239,18 @@ h5 {
 }
 
 h6 {
-	width:180px;
-	text-align: right;
-	float:left;
+	width:500px;
+	height: 23px;
+	text-align: left;
+	top:0px;
+	float:right;
 	padding:0;
+	margin:0;
 	clear:both;
-	font-size: 9px;
+	font-size: 18px;
 	color:#7b90b5;
+	margin-top:-8px;
+	margin-bottom:-12px;
 }
 
 em {

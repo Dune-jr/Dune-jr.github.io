@@ -204,7 +204,7 @@ div.content {
 	overflow: visible;
 	overflow:auto
 	display:block;
-	padding-top:32px;
+	padding-top:25px;
 	overflow-wrap: break-word;
 }
 
@@ -329,8 +329,10 @@ ul.info li {
 	background-image:url(../images/bullet.gif);
 	background-repeat: no-repeat;
 	padding-left:10px;
+	margin-left:10px;
 	background-position: 0 .5em;
 	margin-top:12px;
+	color:rgb(50,50,50);
 }
 
 ul.skills {
@@ -394,7 +396,7 @@ img.portrait {
 	padding-top:20px;
 	padding-left:11px;
 	padding-right:11px;
-	padding-bottom:36px;
+	padding-bottom:16px;
 	margin-left:50px;
 	float:left;
 	

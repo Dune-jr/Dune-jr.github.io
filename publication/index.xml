@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on Jordy Ruiz</title>
+    <link>https://dune-jr.github.io/publication/</link>
+    <description>Recent content in Publications on Jordy Ruiz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Jan 2019 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://dune-jr.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Static Analysis Of Binary Code With Memory Indirections Using Polyhedra</title>
+      <link>https://dune-jr.github.io/publication/vmcai19/</link>
+      <pubDate>Sun, 13 Jan 2019 00:00:00 +0100</pubDate>
+      
+      <guid>https://dune-jr.github.io/publication/vmcai19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Working Around Loops for Infeasible Path Detection in Binary Programs</title>
+      <link>https://dune-jr.github.io/publication/scam17/</link>
+      <pubDate>Mon, 18 Sep 2017 00:00:00 +0200</pubDate>
+      
+      <guid>https://dune-jr.github.io/publication/scam17/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

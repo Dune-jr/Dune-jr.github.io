@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.0.0">
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Jordy Ruiz">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="The following contains instructions to get a working PathFinder build. PathFinder only runs on Linux.
+Downloading PathFinder You can get the sources over at Github, or use this direct link to the ZIP archive.
+Requirements bam PathFinder uses the bam build system. Get it from Github or install the Debian package:
+ apt-get install bam  OTAWA Get it at http://otawa.fr/. You will need OTAWA v2. If you run into trouble with dependencies on Debian, I suggest using">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://dune-jr.github.io/docs/building_pathfinder/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#328cc1">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+  
+
+  
+  <link rel="alternate" href="https://dune-jr.github.io/index.xml" type="application/rss+xml" title="Jordy Ruiz">
+  <link rel="feed" href="https://dune-jr.github.io/index.xml" type="application/rss+xml" title="Jordy Ruiz">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://dune-jr.github.io/docs/building_pathfinder/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Jordy Ruiz">
+  <meta property="og:url" content="https://dune-jr.github.io/docs/building_pathfinder/">
+  <meta property="og:title" content="Building PathFinder | Jordy Ruiz">
+  <meta property="og:description" content="The following contains instructions to get a working PathFinder build. PathFinder only runs on Linux.
+Downloading PathFinder You can get the sources over at Github, or use this direct link to the ZIP archive.
+Requirements bam PathFinder uses the bam build system. Get it from Github or install the Debian package:
+ apt-get install bam  OTAWA Get it at http://otawa.fr/. You will need OTAWA v2. If you run into trouble with dependencies on Debian, I suggest using"><meta property="og:image" content="https://dune-jr.github.io/img/icon-192.png">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-09-09T00:00:00&#43;02:00">
+  
+  <meta property="article:modified_time" content="2018-09-09T00:00:00&#43;02:00">
+  
+
+  
+
+  
+
+  <title>Building PathFinder | Jordy Ruiz</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Jordy Ruiz</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/cv.html">
+            
+            <span>CV ⧉</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#publications">
+            
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#teaching">
+            
+            <span>Teaching</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#fun">
+            
+            <span>Fun</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">
+            
+            <span>Docs</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/">Docs</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/building_pathfinder/">PathFinder</a>
+    <ul class="nav docs-sidenav">
+      
+      <li class="active">
+        <a href="/docs/building_pathfinder/">Building</a>
+      </li>
+      
+      <li >
+        <a href="/docs/running_pathfinder/">Running</a>
+      </li>
+      
+      <li >
+        <a href="/docs/docs_pathfinder/">Documentation</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+      <p class="docs-toc-title">On this page</p>
+      
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#downloading-pathfinder">Downloading PathFinder</a></li>
+<li><a href="#requirements">Requirements</a>
+<ul>
+<li><a href="#bam">bam</a></li>
+<li><a href="#otawa">OTAWA</a></li>
+<li><a href="#an-smt-solver">An SMT solver</a>
+<ul>
+<li><a href="#cvc4">CVC4</a></li>
+<li><a href="#z3">Z3</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#installing-pathfinder">Installing PathFinder</a></li>
+</ul></li>
+</ul>
+</nav>
+
+      <ul class="nav toc-top">
+        <li><a href="#">Back to top</a></li>
+      </ul>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">Building PathFinder</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<p>The following contains instructions to get a working PathFinder build. PathFinder only runs on Linux.</p>
+
+<h2 id="downloading-pathfinder">Downloading PathFinder</h2>
+
+<p>You can get the sources over at <a href="https://github.com/Dune-jr/pathfinder" target="_blank">Github</a>, or use <a href="https://github.com/Dune-jr/pathfinder/archive/master.zip" target="_blank">this direct link</a> to the ZIP archive.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<h3 id="bam">bam</h3>
+
+<p>PathFinder uses the <a href="https://matricks.github.io/bam/" target="_blank">bam build system</a>. Get it <a href="https://github.com/matricks/bam" target="_blank">from Github</a> or install the Debian package:</p>
+
+<pre><code>    apt-get install bam
+</code></pre>
+
+<h3 id="otawa">OTAWA</h3>
+
+<p>Get it at <a href="http://otawa.fr/" target="_blank">http://otawa.fr/</a>. You will need <a href="http://www.tracesgroup.net/otawa/download/otawa-v2/" target="_blank">OTAWA v2</a>. If you run into trouble with dependencies on Debian, I suggest using</p>
+
+<pre><code>    apt-get install flex bison bzr g++ ocaml libxml2-dev libxslt-dev mercurial
+</code></pre>
+
+<h3 id="an-smt-solver">An SMT solver</h3>
+
+<p>PathFinder supports two SMT solvers, <a href="http://cvc4.cs.stanford.edu/web/" target="_blank">CVC4</a> and <a href="https://github.com/Z3Prover/z3/releases" target="_blank">z3</a>. You can use either with very comparable performances and almost identical outputs.</p>
+
+<h4 id="cvc4">CVC4</h4>
+
+<p>If you have admin rights on your machine, you can get CVC4 with an automated script:</p>
+
+<pre><code>    ./get_cvc4.sh
+</code></pre>
+
+<p>You may also want to try a local install (which can be trickier) with</p>
+
+<pre><code>    ./get_cvc4_local/all.sh
+</code></pre>
+
+<h4 id="z3">Z3</h4>
+
+<p>Z3 tends to be significantly less tricky to install. You can follow the instructions at <a href="https://github.com/Z3Prover/z3" target="_blank">https://github.com/Z3Prover/z3</a>.</p>
+
+<h2 id="installing-pathfinder">Installing PathFinder</h2>
+
+<p>To install, type <code>bam</code> and follow the instructions. <code>bam config</code> will run a default config, which you can reset by removing the config.lua file. In order to select either solver, use <code>bam config solver=cvc4</code> or <code>bam config solver=z3</code>.</p>
+
+<p>Alternatively, you can use <code>./make_cvc4</code> or <code>./make_z3</code>.</p>
+
+<p><strong>Note</strong>: In order to run PathFinder with maximum performance (for benchmarking), you must run <code>bam config O=3 debug=false warnings=false v1=false</code>.</p>
+
+<p><strong>Note</strong>: If your terminal does not support UTF-8, use <code>bam config utf8=false</code></p>
+
+          </div>
+
+          
+
+        </div>
+
+        <div class="body-footer">
+          Last updated on Sep 9, 2018
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.beb870ef6297301eca14a85104a90038.js"></script>
+
+  </body>
+</html>
+
+

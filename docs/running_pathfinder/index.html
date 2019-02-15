@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.0.0">
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Jordy Ruiz">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="The following contains instructions for the usage of PathFinder. You will find the pathfinder binaries at the root of the install folder.
+Basic use Calls to PathFinder must follow the pathfinder [OPTIONS] PROGRAM [FUNCTION] pattern. Options can be nested as long as they are one letter. Example:
+pathfinder -3pa benchmarks/if_then_else_2seq.elf  Abstract interpretation modules PathFinder comes with three abstract interpretation modules, named by their chronological order of development. Older versions are kept for academic interest.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://dune-jr.github.io/docs/running_pathfinder/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#328cc1">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+  
+
+  
+  <link rel="alternate" href="https://dune-jr.github.io/index.xml" type="application/rss+xml" title="Jordy Ruiz">
+  <link rel="feed" href="https://dune-jr.github.io/index.xml" type="application/rss+xml" title="Jordy Ruiz">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://dune-jr.github.io/docs/running_pathfinder/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Jordy Ruiz">
+  <meta property="og:url" content="https://dune-jr.github.io/docs/running_pathfinder/">
+  <meta property="og:title" content="Running PathFinder | Jordy Ruiz">
+  <meta property="og:description" content="The following contains instructions for the usage of PathFinder. You will find the pathfinder binaries at the root of the install folder.
+Basic use Calls to PathFinder must follow the pathfinder [OPTIONS] PROGRAM [FUNCTION] pattern. Options can be nested as long as they are one letter. Example:
+pathfinder -3pa benchmarks/if_then_else_2seq.elf  Abstract interpretation modules PathFinder comes with three abstract interpretation modules, named by their chronological order of development. Older versions are kept for academic interest."><meta property="og:image" content="https://dune-jr.github.io/img/icon-192.png">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-09-09T00:00:00&#43;02:00">
+  
+  <meta property="article:modified_time" content="2018-09-09T00:00:00&#43;02:00">
+  
+
+  
+
+  
+
+  <title>Running PathFinder | Jordy Ruiz</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Jordy Ruiz</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/cv.html">
+            
+            <span>CV ⧉</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#publications">
+            
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#teaching">
+            
+            <span>Teaching</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#fun">
+            
+            <span>Fun</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/docs">
+            
+            <span>Docs</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/">Docs</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/building_pathfinder/">PathFinder</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/docs/building_pathfinder/">Building</a>
+      </li>
+      
+      <li class="active">
+        <a href="/docs/running_pathfinder/">Running</a>
+      </li>
+      
+      <li >
+        <a href="/docs/docs_pathfinder/">Documentation</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+      <p class="docs-toc-title">On this page</p>
+      
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#basic-use">Basic use</a>
+<ul>
+<li><a href="#abstract-interpretation-modules">Abstract interpretation modules</a></li>
+</ul></li>
+<li><a href="#options">Options</a>
+<ul>
+<li><a href="#complexity-control">Complexity control</a></li>
+<li><a href="#console-output-control">Console output control</a>
+<ul>
+<li><a href="#verbose">Verbose</a></li>
+<li><a href="#other">Other</a></li>
+</ul></li>
+<li><a href="#outputting-ffx-results">Outputting FFX results</a></li>
+<li><a href="#other-1">Other</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+      <ul class="nav toc-top">
+        <li><a href="#">Back to top</a></li>
+      </ul>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">Running PathFinder</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<p>The following contains instructions for the usage of PathFinder. You will find the <code>pathfinder</code> binaries at the root of the install folder.</p>
+
+<h2 id="basic-use">Basic use</h2>
+
+<p>Calls to PathFinder must follow the <code>pathfinder [OPTIONS] PROGRAM [FUNCTION]</code> pattern. Options can be nested as long as they are one letter. Example:</p>
+
+<pre><code>pathfinder -3pa benchmarks/if_then_else_2seq.elf
+</code></pre>
+
+<h3 id="abstract-interpretation-modules">Abstract interpretation modules</h3>
+
+<p>PathFinder comes with three abstract interpretation modules, named by their chronological order of development. Older versions are kept for academic interest.</p>
+
+<ul>
+<li><p><code>-3</code> is the most recent, best module. It uses modular analysis with composable states and has all the latest developments.</p></li>
+
+<li><p><code>-2</code> does not make use of contextual analysis, but uses a similar abstract interpretation domain as <code>-3</code>.</p></li>
+
+<li><p><code>-1</code> purely uses symbolic predicates to represent program states.
+<strong>Warning</strong>: in order to run with <code>-1</code>, you must configure the pathfinder build with <code>bam config v1=true</code>.</p></li>
+</ul>
+
+<p>You can run <code>pathfinder</code> with no other options on binary files supported by OTAWA.</p>
+
+<h2 id="options">Options</h2>
+
+<p>Options are documented if you run <code>pathfinder -h</code>. You are most likely only interested in the following:</p>
+
+<h3 id="complexity-control">Complexity control</h3>
+
+<p>You will quickly find that PathFinder runs too slow (or runs out of memory) on even most basic programs. This is normal, because it does not by default use any merge algorithm to cope with the exponential complexity of the representation of the program it uses. Thankfully, there are options that allows PathFinder to make a tradeoff between precision and complexity and run on reasonably-sized programs.</p>
+
+<p>You can set merge points using</p>
+
+<ul>
+<li><code>--automerge</code>, <code>-a</code>
+let the algorithm decide when to merge</li>
+</ul>
+
+<p><code>--automerge</code> applies a merge when it runs into 250 or more states. You can adjust this number with the following option:</p>
+
+<ul>
+<li><code>--merge</code>, <code>-m</code>
+merge when exceeding X states at a control point</li>
+</ul>
+
+<p>On some of the largest benchmarks, another factor of complexity explosion is the size of predicates. If <code>--automerge</code> does not suffice, add this option:</p>
+
+<ul>
+<li><code>--clamp_predicates</code>, <code>--cp</code>
+(optimization) clamp predicates size (12 operands max)</li>
+</ul>
+
+<p>If the analysis still takes too long, or too much memory, when using <code>-3</code>, add this option (I think I did not have to use this on any of the Mälardalens):</p>
+
+<ul>
+<li><code>--maf</code>, <code>--merge-after-apply</code>
+(optimization) allow the algorithm to merge immediately after applying</li>
+</ul>
+
+<p>If you are not interested in the infeasible paths output:</p>
+
+<ul>
+<li><code>--slice</code>
+slice away instructions that do not impact the control flow (warning: removes infeasible paths!). This requires PathFinder to be configured with <code>bam config slice=true</code></li>
+</ul>
+
+<h3 id="console-output-control">Console output control</h3>
+
+<p>PathFinder comes with many options to control the console output, which is quite verbose and colorful by default. On larger benchmarks, I like using <code>-p</code>.</p>
+
+<h4 id="verbose">Verbose</h4>
+
+<ul>
+<li><p><code>--s0</code>, <code>--vv</code>, <code>-V</code>:
+high verbose, run with maximal output</p></li>
+
+<li><p><code>--s1</code>, <code>-s</code>
+low verbose, only display results</p></li>
+
+<li><p><code>--s2</code>, <code>-S</code>
+zero verbose, run with no output</p></li>
+
+<li><p><code>--progress</code>, <code>-p</code>
+display analysis progress (forces <code>--s1</code> or higher)</p></li>
+</ul>
+
+<h4 id="other">Other</h4>
+
+<ul>
+<li><p><code>--nc</code>, <code>--no-color</code>, <code>--no-colors</code>
+do not use colors. PathFinder is very colorful by default</p></li>
+
+<li><p><code>--src-info, -i</code>
+print file/line number info</p></li>
+
+<li><p><code>--nir</code>, <code>--no-ip-results</code>
+do not print the list of IPs found</p></li>
+
+<li><p><code>--nl</code>, <code>--no-line-nb</code>
+do not number lines of the output</p></li>
+
+<li><p><code>--detailed-stats</code>, <code>--ds</code>
+display detailed stats, including average length of infeasible_paths found etc.</p></li>
+
+<li><p><code>--loop-bounds</code>, <code>-l</code>
+ONLY print loop bounds (no infeasible paths)</p></li>
+</ul>
+
+<h3 id="outputting-ffx-results">Outputting FFX results</h3>
+
+<p>PathFinder can output its results in a <code>***_ips.ffx</code> file. You must set this flag for this:</p>
+
+<ul>
+<li><code>--output, -o</code>
+output the result of the analysis to a FFX file</li>
+</ul>
+
+<p>You may also want to get some stats in a <code>.tsv</code> file:</p>
+
+<ul>
+<li><code>--graph-output</code>, <code>-g</code>
+also output as a gnuplot .tsv graph file (requires <code>-o</code>)</li>
+</ul>
+
+<h3 id="other-1">Other</h3>
+
+<p>If you are running into crashes due to irregular loops:</p>
+
+<ul>
+<li><code>--reduce</code>
+reduce irregular loops</li>
+</ul>
+
+<p>If you want to run quickly through the program without the infeasible path detection bit:</p>
+
+<ul>
+<li><code>--dry</code>, <code>-d</code>
+dry run (no solver calls)</li>
+</ul>
+
+<p>If you need to provide additional flow facts to PathFinder, use this OTAWA-inherited option:</p>
+
+<ul>
+<li><code>--flowfacts</code>, <code>-f PATH</code>
+select the flowfacts to load</li>
+</ul>
+
+<p>If you run into assert failures:</p>
+
+<ul>
+<li><p><code>--dasp</code>, <code>--dont-assume-id-sp</code>
+do not assume sp = SP0 at the end of a function</p></li>
+
+<li><p><code>--deterministic</code>, <code>-D</code>
+Ensure deterministic output (two executions give the same output).</p></li>
+</ul>
+
+<p>For debugging, as it is interesting to know when you lose the stack pointer (you probably won&rsquo;t get any result afterwards):</p>
+
+<ul>
+<li><code>--sp-critical</code>
+Abort analysis on loss of SP info</li>
+</ul>
+
+          </div>
+
+          
+
+        </div>
+
+        <div class="body-footer">
+          Last updated on Sep 9, 2018
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.beb870ef6297301eca14a85104a90038.js"></script>
+
+  </body>
+</html>
+
+

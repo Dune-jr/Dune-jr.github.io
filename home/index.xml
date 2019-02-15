@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homes on Jordy Ruiz</title>
+    <link>https://dune-jr.github.io/home/</link>
+    <description>Recent content in Homes on Jordy Ruiz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://dune-jr.github.io/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://dune-jr.github.io/home/hero_carousel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dune-jr.github.io/home/hero_carousel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Academic</title>
+      <link>https://dune-jr.github.io/home/hero/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dune-jr.github.io/home/hero/</guid>
+      <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes :rocket: Latest release   Star</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://dune-jr.github.io/home/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dune-jr.github.io/home/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Featured Publications</title>
+      <link>https://dune-jr.github.io/home/publications_featured/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dune-jr.github.io/home/publications_featured/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Publications</title>
+      <link>https://dune-jr.github.io/home/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dune-jr.github.io/home/publications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CV</title>
+      <link>https://dune-jr.github.io/home/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dune-jr.github.io/home/cv/</guid>
+      <description>My CV is available in HTML or PDF form (a bit outdated).</description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://dune-jr.github.io/home/teaching/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dune-jr.github.io/home/teaching/</guid>
+      <description>I am teaching the following practical courses at Polytech for the 2018-2019 academic year.
+ GIS3LT: Language and Translators (Spring, in French) GIS3 Syst: Systems (Spring, in French) GIS3SA: Advanced Systems (Fall, in French)  </description>
+    </item>
+    
+    <item>
+      <title>Fun</title>
+      <link>https://dune-jr.github.io/home/fun/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dune-jr.github.io/home/fun/</guid>
+      <description>I am an active member of the development team of Teeworlds, an online retro multi-player platform 2D shooter, and my childhood&amp;rsquo;s game.
+It is free, open-source, distributed on Steam, Flathub, and as a package on most Linux repositories; it is available on all major platforms. Its free license allows and encourages a large variety of content and forks.</description>
+    </item>
+    
+    <item>
+      <title>Docs</title>
+      <link>https://dune-jr.github.io/home/docs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dune-jr.github.io/home/docs/</guid>
+      <description>I leave on this website documentation for my projects.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://dune-jr.github.io/home/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dune-jr.github.io/home/contact/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

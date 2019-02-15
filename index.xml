@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jordy Ruiz on Jordy Ruiz</title>
+    <link>https://dune-jr.github.io/</link>
+    <description>Recent content in Jordy Ruiz on Jordy Ruiz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Jan 2019 00:00:00 +0100</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Experience</title>
+      <link>https://dune-jr.github.io/teaching/experience/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dune-jr.github.io/teaching/experience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Static Analysis Of Binary Code With Memory Indirections Using Polyhedra</title>
+      <link>https://dune-jr.github.io/publication/vmcai19/</link>
+      <pubDate>Sun, 13 Jan 2019 00:00:00 +0100</pubDate>
+      
+      <guid>https://dune-jr.github.io/publication/vmcai19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Building PathFinder</title>
+      <link>https://dune-jr.github.io/docs/building_pathfinder/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://dune-jr.github.io/docs/building_pathfinder/</guid>
+      <description>
+
+&lt;p&gt;The following contains instructions to get a working PathFinder build. PathFinder only runs on Linux.&lt;/p&gt;
+
+&lt;h2 id=&#34;downloading-pathfinder&#34;&gt;Downloading PathFinder&lt;/h2&gt;
+
+&lt;p&gt;You can get the sources over at &lt;a href=&#34;https://github.com/Dune-jr/pathfinder&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;, or use &lt;a href=&#34;https://github.com/Dune-jr/pathfinder/archive/master.zip&#34; target=&#34;_blank&#34;&gt;this direct link&lt;/a&gt; to the ZIP archive.&lt;/p&gt;
+
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
+
+&lt;h3 id=&#34;bam&#34;&gt;bam&lt;/h3&gt;
+
+&lt;p&gt;PathFinder uses the &lt;a href=&#34;https://matricks.github.io/bam/&#34; target=&#34;_blank&#34;&gt;bam build system&lt;/a&gt;. Get it &lt;a href=&#34;https://github.com/matricks/bam&#34; target=&#34;_blank&#34;&gt;from Github&lt;/a&gt; or install the Debian package:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    apt-get install bam
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;otawa&#34;&gt;OTAWA&lt;/h3&gt;
+
+&lt;p&gt;Get it at &lt;a href=&#34;http://otawa.fr/&#34; target=&#34;_blank&#34;&gt;http://otawa.fr/&lt;/a&gt;. You will need &lt;a href=&#34;http://www.tracesgroup.net/otawa/download/otawa-v2/&#34; target=&#34;_blank&#34;&gt;OTAWA v2&lt;/a&gt;. If you run into trouble with dependencies on Debian, I suggest using&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    apt-get install flex bison bzr g++ ocaml libxml2-dev libxslt-dev mercurial
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;an-smt-solver&#34;&gt;An SMT solver&lt;/h3&gt;
+
+&lt;p&gt;PathFinder supports two SMT solvers, &lt;a href=&#34;http://cvc4.cs.stanford.edu/web/&#34; target=&#34;_blank&#34;&gt;CVC4&lt;/a&gt; and &lt;a href=&#34;https://github.com/Z3Prover/z3/releases&#34; target=&#34;_blank&#34;&gt;z3&lt;/a&gt;. You can use either with very comparable performances and almost identical outputs.&lt;/p&gt;
+
+&lt;h4 id=&#34;cvc4&#34;&gt;CVC4&lt;/h4&gt;
+
+&lt;p&gt;If you have admin rights on your machine, you can get CVC4 with an automated script:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    ./get_cvc4.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You may also want to try a local install (which can be trickier) with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    ./get_cvc4_local/all.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;z3&#34;&gt;Z3&lt;/h4&gt;
+
+&lt;p&gt;Z3 tends to be significantly less tricky to install. You can follow the instructions at &lt;a href=&#34;https://github.com/Z3Prover/z3&#34; target=&#34;_blank&#34;&gt;https://github.com/Z3Prover/z3&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;installing-pathfinder&#34;&gt;Installing PathFinder&lt;/h2&gt;
+
+&lt;p&gt;To install, type &lt;code&gt;bam&lt;/code&gt; and follow the instructions. &lt;code&gt;bam config&lt;/code&gt; will run a default config, which you can reset by removing the config.lua file. In order to select either solver, use &lt;code&gt;bam config solver=cvc4&lt;/code&gt; or &lt;code&gt;bam config solver=z3&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Alternatively, you can use &lt;code&gt;./make_cvc4&lt;/code&gt; or &lt;code&gt;./make_z3&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: In order to run PathFinder with maximum performance (for benchmarking), you must run &lt;code&gt;bam config O=3 debug=false warnings=false v1=false&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: If your terminal does not support UTF-8, use &lt;code&gt;bam config utf8=false&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Documentation</title>
+      <link>https://dune-jr.github.io/docs/docs_pathfinder/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://dune-jr.github.io/docs/docs_pathfinder/</guid>
+      <description>&lt;p&gt;Documentation for PathFinder&amp;rsquo;s public classes can be generated by running &lt;code&gt;doxygen&lt;/code&gt; at the root of the installation directory.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Classes Index&lt;/strong&gt; document is located at &lt;code&gt;autodoc/classes.html&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Running PathFinder</title>
+      <link>https://dune-jr.github.io/docs/running_pathfinder/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://dune-jr.github.io/docs/running_pathfinder/</guid>
+      <description>
+
+&lt;p&gt;The following contains instructions for the usage of PathFinder. You will find the &lt;code&gt;pathfinder&lt;/code&gt; binaries at the root of the install folder.&lt;/p&gt;
+
+&lt;h2 id=&#34;basic-use&#34;&gt;Basic use&lt;/h2&gt;
+
+&lt;p&gt;Calls to PathFinder must follow the &lt;code&gt;pathfinder [OPTIONS] PROGRAM [FUNCTION]&lt;/code&gt; pattern. Options can be nested as long as they are one letter. Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pathfinder -3pa benchmarks/if_then_else_2seq.elf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;abstract-interpretation-modules&#34;&gt;Abstract interpretation modules&lt;/h3&gt;
+
+&lt;p&gt;PathFinder comes with three abstract interpretation modules, named by their chronological order of development. Older versions are kept for academic interest.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;-3&lt;/code&gt; is the most recent, best module. It uses modular analysis with composable states and has all the latest developments.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;-2&lt;/code&gt; does not make use of contextual analysis, but uses a similar abstract interpretation domain as &lt;code&gt;-3&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;-1&lt;/code&gt; purely uses symbolic predicates to represent program states.
+&lt;strong&gt;Warning&lt;/strong&gt;: in order to run with &lt;code&gt;-1&lt;/code&gt;, you must configure the pathfinder build with &lt;code&gt;bam config v1=true&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can run &lt;code&gt;pathfinder&lt;/code&gt; with no other options on binary files supported by OTAWA.&lt;/p&gt;
+
+&lt;h2 id=&#34;options&#34;&gt;Options&lt;/h2&gt;
+
+&lt;p&gt;Options are documented if you run &lt;code&gt;pathfinder -h&lt;/code&gt;. You are most likely only interested in the following:&lt;/p&gt;
+
+&lt;h3 id=&#34;complexity-control&#34;&gt;Complexity control&lt;/h3&gt;
+
+&lt;p&gt;You will quickly find that PathFinder runs too slow (or runs out of memory) on even most basic programs. This is normal, because it does not by default use any merge algorithm to cope with the exponential complexity of the representation of the program it uses. Thankfully, there are options that allows PathFinder to make a tradeoff between precision and complexity and run on reasonably-sized programs.&lt;/p&gt;
+
+&lt;p&gt;You can set merge points using&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--automerge&lt;/code&gt;, &lt;code&gt;-a&lt;/code&gt;
+let the algorithm decide when to merge&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;--automerge&lt;/code&gt; applies a merge when it runs into 250 or more states. You can adjust this number with the following option:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--merge&lt;/code&gt;, &lt;code&gt;-m&lt;/code&gt;
+merge when exceeding X states at a control point&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On some of the largest benchmarks, another factor of complexity explosion is the size of predicates. If &lt;code&gt;--automerge&lt;/code&gt; does not suffice, add this option:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--clamp_predicates&lt;/code&gt;, &lt;code&gt;--cp&lt;/code&gt;
+(optimization) clamp predicates size (12 operands max)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If the analysis still takes too long, or too much memory, when using &lt;code&gt;-3&lt;/code&gt;, add this option (I think I did not have to use this on any of the Mälardalens):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--maf&lt;/code&gt;, &lt;code&gt;--merge-after-apply&lt;/code&gt;
+(optimization) allow the algorithm to merge immediately after applying&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you are not interested in the infeasible paths output:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--slice&lt;/code&gt;
+slice away instructions that do not impact the control flow (warning: removes infeasible paths!). This requires PathFinder to be configured with &lt;code&gt;bam config slice=true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;console-output-control&#34;&gt;Console output control&lt;/h3&gt;
+
+&lt;p&gt;PathFinder comes with many options to control the console output, which is quite verbose and colorful by default. On larger benchmarks, I like using &lt;code&gt;-p&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;verbose&#34;&gt;Verbose&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;--s0&lt;/code&gt;, &lt;code&gt;--vv&lt;/code&gt;, &lt;code&gt;-V&lt;/code&gt;:
+high verbose, run with maximal output&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;--s1&lt;/code&gt;, &lt;code&gt;-s&lt;/code&gt;
+low verbose, only display results&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;--s2&lt;/code&gt;, &lt;code&gt;-S&lt;/code&gt;
+zero verbose, run with no output&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;--progress&lt;/code&gt;, &lt;code&gt;-p&lt;/code&gt;
+display analysis progress (forces &lt;code&gt;--s1&lt;/code&gt; or higher)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;other&#34;&gt;Other&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;--nc&lt;/code&gt;, &lt;code&gt;--no-color&lt;/code&gt;, &lt;code&gt;--no-colors&lt;/code&gt;
+do not use colors. PathFinder is very colorful by default&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;--src-info, -i&lt;/code&gt;
+print file/line number info&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;--nir&lt;/code&gt;, &lt;code&gt;--no-ip-results&lt;/code&gt;
+do not print the list of IPs found&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;--nl&lt;/code&gt;, &lt;code&gt;--no-line-nb&lt;/code&gt;
+do not number lines of the output&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;--detailed-stats&lt;/code&gt;, &lt;code&gt;--ds&lt;/code&gt;
+display detailed stats, including average length of infeasible_paths found etc.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;--loop-bounds&lt;/code&gt;, &lt;code&gt;-l&lt;/code&gt;
+ONLY print loop bounds (no infeasible paths)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;outputting-ffx-results&#34;&gt;Outputting FFX results&lt;/h3&gt;
+
+&lt;p&gt;PathFinder can output its results in a &lt;code&gt;***_ips.ffx&lt;/code&gt; file. You must set this flag for this:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--output, -o&lt;/code&gt;
+output the result of the analysis to a FFX file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You may also want to get some stats in a &lt;code&gt;.tsv&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--graph-output&lt;/code&gt;, &lt;code&gt;-g&lt;/code&gt;
+also output as a gnuplot .tsv graph file (requires &lt;code&gt;-o&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;other-1&#34;&gt;Other&lt;/h3&gt;
+
+&lt;p&gt;If you are running into crashes due to irregular loops:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--reduce&lt;/code&gt;
+reduce irregular loops&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you want to run quickly through the program without the infeasible path detection bit:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--dry&lt;/code&gt;, &lt;code&gt;-d&lt;/code&gt;
+dry run (no solver calls)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you need to provide additional flow facts to PathFinder, use this OTAWA-inherited option:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--flowfacts&lt;/code&gt;, &lt;code&gt;-f PATH&lt;/code&gt;
+select the flowfacts to load&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you run into assert failures:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;--dasp&lt;/code&gt;, &lt;code&gt;--dont-assume-id-sp&lt;/code&gt;
+do not assume sp = SP0 at the end of a function&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;--deterministic&lt;/code&gt;, &lt;code&gt;-D&lt;/code&gt;
+Ensure deterministic output (two executions give the same output).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For debugging, as it is interesting to know when you lose the stack pointer (you probably won&amp;rsquo;t get any result afterwards):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--sp-critical&lt;/code&gt;
+Abort analysis on loss of SP info&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Working Around Loops for Infeasible Path Detection in Binary Programs</title>
+      <link>https://dune-jr.github.io/publication/scam17/</link>
+      <pubDate>Mon, 18 Sep 2017 00:00:00 +0200</pubDate>
+      
+      <guid>https://dune-jr.github.io/publication/scam17/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

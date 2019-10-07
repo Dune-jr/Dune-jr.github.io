@@ -6,7 +6,7 @@
     <description>Recent content in Laure Gonnord on Jordy Ruiz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Jan 2019 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 13 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dune-jr.github.io/authors/laure-gonnord/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Static Analysis Of Binary Code With Memory Indirections Using Polyhedra</title>
       <link>https://dune-jr.github.io/publication/vmcai19/</link>
-      <pubDate>Sun, 13 Jan 2019 00:00:00 +0100</pubDate>
+      <pubDate>Sun, 13 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://dune-jr.github.io/publication/vmcai19/</guid>
       <description></description>

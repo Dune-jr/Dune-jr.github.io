@@ -6,7 +6,7 @@
     <description>Recent content in Marianne De Michiel on Jordy Ruiz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Sep 2017 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 18 Sep 2017 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://dune-jr.github.io/authors/marianne-de-michiel/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Working Around Loops for Infeasible Path Detection in Binary Programs</title>
       <link>https://dune-jr.github.io/publication/scam17/</link>
-      <pubDate>Mon, 18 Sep 2017 00:00:00 +0200</pubDate>
+      <pubDate>Mon, 18 Sep 2017 00:00:00 +0100</pubDate>
       
       <guid>https://dune-jr.github.io/publication/scam17/</guid>
       <description>Infeasible paths are a major cause of overestimation of the Worst-Case Execution Time (WCET): without data flow constraints, static analysis by implicit path enumeration will take into account semantically impossible, potentially expensive execution paths, making the Worst-Case Execution Path unreachable in practice. We present in this paper an approach that allows to significantly tighten the WCET by identifying infeasible paths, namely in loops, and injecting them as additional Integer Linear Programming (ILP) constraints during the WCET computation.</description>

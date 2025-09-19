@@ -1,0 +1,97 @@
+\documentclass[11pt,a4paper]{article} 
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx} % images3
+\usepackage{lmodern}
+\usepackage{lscape}
+\usepackage{textcomp}
+\usepackage{threeparttable}
+\usepackage{xcolor}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\color{olive}\ding{51}}%
+\newcommand{\xmark}{\color{gray}\ding{55}}%
+\usepackage[margin=0.75in]{geometry} % Adjusts the margins
+\usepackage{amsthm}
+\theoremstyle{plain}
+\newtheorem*{theorem}{Définition}
+
+\begin{document}
+\begin{landscape}
+	
+\section{Groupes}
+\begin{theorem}
+	Un \textbf{magma} est un ensemble muni d'une loi de composition interne.
+\end{theorem}
+
+\begin{table}[h]
+\centering
+\begin{threeparttable}[h]
+\begin{tabular}{l|cccc}
+	\hline
+	& Associatif & Unifère\tnote{1}  & Symétrique\tnote{2} & Commutatif
+	\\\hline
+	Magma & \xmark & \xmark & \xmark & \xmark
+	\\
+	Demi-groupe & \cmark & \xmark & \xmark & \xmark
+	\\
+	Monoïde & \cmark & \cmark & \xmark & \xmark
+	\\
+	Groupe & \cmark & \cmark & \cmark & \xmark
+	\\
+	Groupe abélien& \cmark & \cmark & \cmark & \cmark
+	\\\hline
+\end{tabular}
+\begin{tablenotes}\footnotesize
+	\item[1] Existence d'un neutre.
+	\item[2] Tout élément a un inverse.
+\end{tablenotes}
+\end{threeparttable}
+\caption{Groupes}
+\end{table}
+
+\section{Anneaux}
+Soit la structure algébrique $(E,+,\times ,0,1)$.
+%L'opérateur $+$ est \textbf{commutatif}.
+
+\begin{table}[h]
+\centering
+\begin{threeparttable}[h]
+\begin{tabular}{l|cc|c|cccccc}
+	\hline
+	& $(E,\times,1)$ & $(E,+,0)$   & Distributif & Unitaire\tnote{1} & \multicolumn{2}{c}{Symétrique} & \multicolumn{2}{c}{Commutatif} & Sans div. de 0\\
+	&&&\& absorbant\tnote{3} & & ~$\times$\tnote{2}~ & ~+~ &  ~~$\times$~~ & ~~+~~ &
+	\\\hline
+	Pseudo-anneau & Demi-groupe & Groupe commutatif &  \cmark &  \xmark & \xmark &\cmark & \xmark & \cmark & \xmark
+	\\
+	Demi-anneau & Monoïde & Monoïde commutatif\tnote{3} &  \cmark &  \cmark & \xmark &\xmark & \xmark & \cmark & \xmark
+	\\
+	Anneau (unitaire) & Monoïde & Groupe commutatif &  \cmark &  \cmark & \xmark &\cmark & \xmark & \cmark & \xmark
+	\\
+	Anneau commutatif & Monoïde commutatif & Groupe commutatif & \cmark &  \cmark & \xmark &\cmark & \cmark & \cmark & \xmark
+	\\
+	Anneau intègre\tnote{4} & \begin{tabular}{c}Monoïde commutatif\\sans diviseur de zéro\end{tabular} & Groupe commutatif
+	&  \cmark & \cmark & \xmark &\cmark & \cmark & \cmark & \cmark
+	\\
+	Corps gauche & Groupe\tnote{2} & Groupe commutatif
+		&  \cmark & \cmark & \cmark &\cmark & \xmark & \cmark & \cmark
+	\\
+	Corps (commutatif) & Groupe commutatif\tnote{2} & Groupe commutatif
+	&  \cmark & \cmark & \cmark &\cmark & \cmark & \cmark & \cmark
+	\\\hline
+\end{tabular}
+\begin{tablenotes}\footnotesize
+	\item[1] Existence d'un neutre au $\times$. Aussi dit unifère.
+% 	\item[2] Tout élément a un inverse par $+$ et $\times$.
+	\item[2] Sur $E \setminus \{0\}$.
+	\item[3] Il faut prouver séparément que le 0 est absorbant pour les demi-anneaux.
+	\item[4] Ou anneau nul (l'anneau intègre ne peut être nul).
+\end{tablenotes}
+\end{threeparttable}
+\caption{Anneaux}
+\end{table}
+	
+\end{landscape}	
+\end{document}

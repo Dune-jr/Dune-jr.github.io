@@ -16,8 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dune-jr.github.io/author/admin/</guid>
-      <description>I am currently a Research Associate in the Software Reliability Group at Imperial College London, under the direction of Pr Cristian Cadar. For now, I am experimenting with the Chopper tool in order to automate the selection of skipped code regions.
-Last year, I was a postdoctoral researcher at University of Lille, in the CRIStAL labs. My research work revolved around techniques, algorithms and abstractions for the static analysis of binary code, and a better understanding of its underlying structures.</description>
+      <description>I am the Lead Software Developer at StatInf. Together with a team of five, we develop RocqStat, a patented statistical timing analysis tool. I coordinate the collaborative development of the team and interface with R&amp;amp;D, Product and Corporate. I am also in charge of the support for our assembly code program analysis modules, extracting the semantics of the program directly from the ELF files, for a variety of architectures (ARMv7-Thumb2, ARMv9, PPC, Texas Instruments&amp;hellip;).</description>
     </item>
     
   </channel>

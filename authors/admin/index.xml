@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dune-jr.github.io/author/admin/</guid>
-      <description>I am the Lead Software Developer at StatInf. Together with a team of five, we develop RocqStat, a patented statistical timing analysis tool. I coordinate the collaborative development of the team and interface with R&amp;amp;D, Product and Corporate. I am also in charge of the support for our assembly code program analysis modules, extracting the semantics of the program directly from the ELF files, for a variety of architectures (ARMv7-Thumb2, ARMv9, PPC, Texas Instruments&amp;hellip;).</description>
+      <description>I am the Lead Software Developer at StatInf, where together with a team of five we develop RocqStat™, a patented statistical timing analysis tool for embedded systems. I coordinate development across the team and interface with R&amp;amp;D, Product and Corporate. Also, I maintain our assembly code program analysis modules, extracting the semantics of the program directly from the ELF files, for a variety of architectures (ARMv7-Thumb2, ARMv9, PPC, Texas Instruments&amp;hellip;).</description>
     </item>
     
   </channel>
